@@ -1,0 +1,21 @@
+const mongoose=require("mongoose")
+
+const schema=new mongoose.Schema({
+    course:{
+        type:mongoose.Types.ObjectId,
+        ref:"Course"
+    },
+    user:{
+        type:mongoose.Types.ObjectId,
+        ref:"User"
+    },
+    price:{
+        type:Number,
+        required:true
+    }
+},{timestamps:true})
+
+
+const model=mongoose.model("Course_User",schema)
+
+module.exports=model
